@@ -23,10 +23,10 @@ export const AppBar = () => {
           </LogOutButton>
         </LoginUser>
       ) : (
-        <div>
+        <Nav>
           <NavigationLink to="/register">Sign Up</NavigationLink>
           <NavigationLink to="/login">Log In</NavigationLink>
-        </div>
+        </Nav>
       )}
     </>
   );
