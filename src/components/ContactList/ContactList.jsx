@@ -1,44 +1,36 @@
-import { ContactCard, Contact, Button } from './ContactList.Styled';
 import {
   useDeleteContactMutation,
-  useGetContactsQuery,
-} from 'components/redux/contactApi';
-import { useSelector } from 'react-redux';
-
-export const ContactList = () => {
-
-  const { data: contacts } = useGetContactsQuery();
-  const [deleteContact] = useDeleteContactMutation();
-  const deleteOneContact = contactId => deleteContact(contactId);
+} from 'redux/contactsOperation';
+import { ContactCard, Contact, Button } from './ContactList.Styled';
+import { ImCross } from "react-icons/im";
 
 
-  const filter = useSelector(state => state.filter);
-
-  const getVisibleContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-
-    if (contacts) {
-      return contacts.filter(({ name }) =>
-        name.toLowerCase().includes(normalizedFilter)
-      );
-    }
-  };
-  const visibleContacts = getVisibleContacts();
+export const ContactList = ({ contacts }) => {
+  const [deleteContacts, { isLoading: isDeleting }] =
+  useDeleteContactMutation();
 
   return (
-    <ContactCard>
-      { contacts && visibleContacts.map(({ id, name, phone }) => {
-          return (
-            <Contact key={id}>
-              <p>
-              <span>{name}</span>
-              <span>{phone}</span>
+    <>
+    {contacts.length > 0 ? (
+      <ContactCard>
+        {contacts.map(({ id, name, number }) => (
+          <Contact key={id}>
+            <p>
+              {name}: {number}
             </p>
-            <Button type="button" onClick={() => deleteOneContact(id)}> delete
+            <Button
+              type="button"
+              disabled={isDeleting}
+              onClick={() => deleteContacts(id)}
+            >
+            <ImCross width="20px" height="20px" fill="#CD5C5C"/>
             </Button>
-            </Contact>
-          );
-        })}
-    </ContactCard>
+          </Contact>
+        ))}
+      </ContactCard>
+    ) : (
+      <p>No contacts...</p>
+    )}
+  </>
   );
 };

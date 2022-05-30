@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { SearchCard, Lable, Button } from './Form.Styled';
+import { SearchCard, Lable, Button, AddContactForm } from './Form.Styled';
 import { nanoid } from 'nanoid';
 import toast from 'react-hot-toast';
 import {
   useGetContactsQuery,
   useAddContactMutation,
-} from 'components/redux/contactApi';
+} from 'redux/contactsOperation';
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
+
 
 export function Form() {
   const { data: contacts } = useGetContactsQuery();
@@ -55,9 +57,8 @@ export function Form() {
     formReset();
   };
 
-  
   return (
-    <form autoComplete="off" onSubmit={handleSubmit}>
+    <AddContactForm autoComplete="off" onSubmit={handleSubmit}>
       <Lable htmlFor="name">Name</Lable>
       <SearchCard
         type="text"
@@ -80,7 +81,9 @@ export function Form() {
         required
         onChange={handleChange}
       />
-      <Button type="submit">Add contact</Button>
-    </form>
+      <Button type="submit">Add contact
+      <AiOutlineUsergroupAdd  width="20px" height="20px" />
+      </Button>
+    </AddContactForm>
   );
 }
