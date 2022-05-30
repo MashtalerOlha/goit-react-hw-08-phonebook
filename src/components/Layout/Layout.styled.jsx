@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 
 export const Header = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #565B9F;
   padding: 15px;
 `;
