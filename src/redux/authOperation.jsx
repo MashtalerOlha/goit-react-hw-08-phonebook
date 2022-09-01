@@ -4,6 +4,7 @@ export const authOperation = createApi({
   reducerPath: 'authOperation',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://connections-api.herokuapp.com/',
+    keepUnusedDataFor: 1,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       if (token) {
@@ -13,7 +14,6 @@ export const authOperation = createApi({
     },
   }),
   
-  keepUnusedDataFor: 5,
   endpoints: builder => ({
     fetchCurrentUser: builder.query({
       query: () => '/users/current',
