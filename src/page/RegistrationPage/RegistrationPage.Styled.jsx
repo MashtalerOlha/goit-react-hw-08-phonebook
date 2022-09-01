@@ -16,24 +16,25 @@ export const Text = styled.p`
   margin-top: 100px;
   margin-bottom: 40px;
   font-weight: 700;
-  color:  #565b9f;
+  color: #565b9f;
 `;
 
 export const Input = styled(Field)`
   height: 25px;
   margin-bottom: 4px;
-  font: italic 1.2em 'Fira Sans', serif;
+  padding: 4px;
+  font: 1.2em 'Fira Sans', serif;
   font-size: 14px;
 `;
 export const RegisterLable = styled.label`
   text-align: start;
   margin-bottom: 4px;
-  color:  #565b9f;
+  color: #565b9f;
 `;
 
 export const RegisterButton = styled.button`
-  margin: auto;
-  font: italic 1.2em 'Fira Sans', serif;
+  margin: 10px auto ;
+  font: 1.2em 'Fira Sans', serif;
   height: 40px;
   width: 200px;
   border: 0px solid #565b9f;
@@ -41,4 +42,11 @@ export const RegisterButton = styled.button`
   color: #565b9f;
   box-shadow: 0 4px 4px rgb(0 0 0 / 15%);
   cursor: pointer;
+`;
+
+export const ErrorMessageText = styled.p`
+  margin: 2px;
+  text-align: end;
+  color: red;
+  font-size: 15px;
 `;

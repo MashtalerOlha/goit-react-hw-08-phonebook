@@ -12,34 +12,35 @@ export const AddContactForm = styled.form`
 
 export const SearchCard = styled.input`
   margin: 11px;
+  padding: 5px;
   border-color: #565b9f;
-  border-style: dashed;
+  border-style: solid;
   border-radius: 4px;
   color: #565b9f;
-  font: italic 0.8em 'Fira Sans', serif;
+  font: 0.8em 'Fira Sans', serif;
 
   &:focus {
     outline: none !important;
     border-color: #565b9f;
     box-shadow: 0 0 10px #565b9f;
     color: #565b9f;
-    font: italic 0.8em 'Fira Sans', serif;
+    font: 0.8em 'Fira Sans', serif;
   }
 `;
 export const Lable = styled.label`
-font-size: 26px;
-color: #565b9f;
-}`;
+  font-size: 26px;
+  color: #565b9f;
+`;
 
 export const Button = styled.button`
-color: white;
-background-color: #565b9f;
-margin: auto;
-width: 190px;
-padding: 5px 20px;
-border-color: white;
-border-style: dashed;
-border-radius: 25px;
-font: italic 1.2em "Fira Sans", serif;
-  }
+  color: white;
+  background-color: #565b9f;
+  margin: auto;
+  width: 190px;
+  padding: 5px 20px;
+  border: 4px;
+  border-color: #eddeff;
+  border-style: double;
+  border-radius: 25px;
+  font: 1.2em 'Fira Sans', serif;
 `;

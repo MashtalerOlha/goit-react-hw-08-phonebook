@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import { useLoginMutation } from 'redux/authOperation';
 import { authSelectors } from 'redux/selectors';
 import { useSelector } from 'react-redux';
-import { LoginForm, Text, Input, LoginLable, LoginButton } from './LoginPage.Styled';
+import { LoginForm, Text, Input, LoginLable, LoginButton, ErrorMessageText } from './LoginPage.Styled';
 
 export default function LoginPage() {
   const [login, { isSuccess, isError }] = useLoginMutation();
@@ -26,7 +26,7 @@ export default function LoginPage() {
   };
 
   const FormError = ({ name }) => {
-    return <ErrorMessage name={name} render={message => <p>{message}</p>} />;
+    return <ErrorMessage name={name} render={message => <ErrorMessageText>{message}</ErrorMessageText>} />;
   };
 
   return (

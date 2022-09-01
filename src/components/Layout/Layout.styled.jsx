@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  font: italic 1.2em 'Fira Sans', serif;
+  font:  1.2em 'Fira Sans', serif;
 `;
 
 export const Header = styled.header`

@@ -2,7 +2,7 @@ import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useRegisterMutation } from 'redux/authOperation';
 import toast, { Toaster } from 'react-hot-toast';
-import { RegisterForm, Text, Input, RegisterLable, RegisterButton } from './RegistrationPage.Styled';
+import { RegisterForm, Text, Input, RegisterLable, RegisterButton, ErrorMessageText } from './RegistrationPage.Styled';
 
 export default function RegisterPage() {
   const [register, { isSuccess, isError }] = useRegisterMutation();
@@ -25,7 +25,7 @@ export default function RegisterPage() {
   };
 
   const FormError = ({ name }) => {
-    return <ErrorMessage name={name} render={message => <p>{message}</p>} />;
+    return <ErrorMessage name={name} render={message => <ErrorMessageText>{message}</ErrorMessageText>} />;
   };
 
   return (

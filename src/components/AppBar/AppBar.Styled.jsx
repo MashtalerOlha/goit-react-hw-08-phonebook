@@ -26,10 +26,10 @@ margin: 15px
 
 export const LogOutButton = styled.button`
   margin: auto;
-  font: italic 1.2em 'Fira Sans', serif;
+  font:  1.2em 'Fira Sans', serif;
   height: 22px;
   border-color: #565B9F;
-  border-style: dashed;
+  border-style: double;
   border-radius: 25px;
   color: #565B9F;
   box-shadow: 0 4px 4px rgb(0 0 0 / 15%);
